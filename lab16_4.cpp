@@ -17,3 +17,18 @@ int main(){
 	
 	return 0;
 }
+
+
+void shuffle(int &x, int &y, int &z , int &k){
+	int arr[] {x,y,z,k};
+	x = arr[rand()%4];
+	do{
+	y = arr[rand()%4];
+	}while(y == x);
+	do{
+	z = arr[rand()%4];
+	}while(z == y || z == x);
+	do{
+	k = arr[rand()%4];
+	}while(k == z || k == x || k == y);
+}
